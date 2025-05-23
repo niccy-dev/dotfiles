@@ -1,0 +1,17 @@
+include /etc/sway/config.d/*
+include "$HOME/.config/sway/default/*"
+include "$HOME/.config/sway/niccy/*"
+input "13159:6497:Endgame_Gear_Endgame_Gear_WE_Series_Gaming_Receiver" {
+    accel_profile "flat"
+    pointer_accel 0
+    natural_scroll disabled
+    left_handed disabled
+    }
+
+output DP-1 bg /home/niccy/Downloads/pixel-sky/sky26-v1.png fill
+output DP-1 mode 1920x1080@240hz pos 0 0 scale 1 scale_filter nearest
+output eDP-1 disable
+output eDP-1 bg /home/niccy/Downloads/pixel-sky/sky26-v1.png fill
+
+
+

@@ -1,0 +1,101 @@
+### Binds ###
+#
+set $left h
+set $down j
+set $up k
+set $right l
+set $mod Mod4
+set $term foot
+set $menu rofi -show run
+
+### Binds ###
+#
+## Movement
+#
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+## Basic
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+x kill
+bindsym $mod+f fullscreen
+bindsym $mod+period exec makoctl dismiss -a
+
+## Custom
+bindsym $mod+shift+g exec grim -g "$(slurp)"
+bindsym $mod+g exec $HOME/.scripts/ssc
+bindsym $mod+b exec $HOME/.scripts/swaybordertoggle ## i dont know why my custom scripts need to have direct path but this works for temp fix
+
+## Sway
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+v exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+
+### Workspaces ###
+#
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+q workspace number 6
+bindsym $mod+w workspace number 7
+bindsym $mod+e workspace number 8
+bindsym $mod+r workspace number 9
+bindsym $mod+t workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+q move container to workspace number 6
+bindsym $mod+Shift+w move container to workspace number 7
+bindsym $mod+Shift+e move container to workspace number 8
+bindsym $mod+Shift+r move container to workspace number 9
+bindsym $mod+Shift+t move container to workspace number 10
+
+
+## Layout stuff
+#
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+
+## Scratchpad:
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+floating_modifier $mod normal
+
+## Modes
+#
+mode "resize" {
+    bindsym $left resize shrink width 30px
+    bindsym $down resize grow height 30px
+    bindsym $up resize shrink height 30px
+    bindsym $right resize grow width 30px
+
+    bindsym Escape mode "default"
+}
+bindsym $mod+z mode "resize"

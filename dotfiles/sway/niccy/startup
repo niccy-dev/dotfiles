@@ -1,0 +1,12 @@
+### Startup ###
+#
+exec ghostty
+exec firefox
+exec vesktop
+exec steam
+exec spotify
+exec_always autotiling
+exec mako
+exec code
+#exec --no-startup-id /usr/lib/xdg-desktop-portal -r # for obs screen recording on wayland
+exec $HOME/.scripts/random-bgr
