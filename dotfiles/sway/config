@@ -8,10 +8,12 @@ input "13159:6497:Endgame_Gear_Endgame_Gear_WE_Series_Gaming_Receiver" {
     left_handed disabled
     }
 
-output DP-1 bg /home/niccy/Downloads/pixel-sky/sky26-v1.png fill
-output DP-1 mode 1920x1080@240hz pos 0 0 scale 1 scale_filter nearest
+output DP-1 bg /home/laura/Downloads/pixel-sky/sky26-v1.png fill
+output DP-1 mode 1920x1080@240hz pos 1920 0 scale 1 scale_filter nearest
+output HDMI-A-1 mode 1920x1080@100hz pos 0 0 scale 1 scale_filter nearest
+output HDMI-A-1 bg /home/laura/Downloads/pixel-sky/sky26-v1.png fill
 output eDP-1 disable
-output eDP-1 bg /home/niccy/Downloads/pixel-sky/sky26-v1.png fill
+output eDP-1 bg /home/laura/Downloads/pixel-sky/sky26-v1.png fill
 
 
 
